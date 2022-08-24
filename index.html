@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이지영 포트폴리오</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./common/reset.css">
     <link rel="stylesheet" href="./common/common.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -15,6 +16,21 @@
 </head>
 
 <body>
+    <header id="hd">
+        <nav>
+            <ul class="gnb">
+                <li class="home_nav">HOME</li>
+                <li class="aboutme_nav"> ABOUT ME</li>
+                <li class="portfolio_nav">PORTFOLIO</li>
+                <li class="contact_nav">CONTACT</li>
+            </ul>
+            <div class="ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
     <div class="wrap">
         <!-- main -->
         <section class="main on" id="main">
@@ -22,41 +38,11 @@
             <div class="stars"></div>
             <div class="title"><img src="./images/main_title.svg" alt="메인_타이틀"></div>
             <div class="mb_title"><img src="./images/mb_main_title.svg" alt="모바일_메인_타이틀"></div>
-            <div class="inner">
-                <nav>
-                    <ul class="gnb">
-                        <li class="home_nav">HOME</li>
-                        <li class="aboutme_nav"> ABOUT ME</li>
-                        <li class="portfolio_nav">PORTFOLIO</li>
-                        <li class="contact_nav">CONTACT</li>
-                    </ul>
-                    <div class="ham">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </nav>
-            </div>
         </section>
         <!-- about me -->
         <section class="aboutMe" id="aboutMe">
             <h1 hidden>about me</h1>
             <div class="inner">
-                <header>
-                    <nav>
-                        <ul class="detail_gnb ab_nav">
-                            <li class="home_nav">HOME</li>
-                            <li class="aboutme_nav"> ABOUT ME</li>
-                            <li class="portfolio_nav">PORTFOLIO</li>
-                            <li class="contact_nav">CONTACT</li>
-                        </ul>
-                        <div class="detail_ham">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </nav>
-                </header>
                 <div class="aboutMe_bg">
                     <div class="circle_con">
                         <div class="circle1">&nbsp;</div>
@@ -65,13 +51,13 @@
                     </div>
                 </div>
                 <div class="am_list">
-                    <div class="whoami" data-aos="fade-zoom-in" data-aos-delay="300">
+                    <div class="whoami" data-aos="fade-up">
                         <h2>who am i</h2>
-                        <p><span>이름&nbsp;&nbsp;&nbsp;&nbsp;&#58;</span>&nbsp;이지영</p>
-                        <p><span>출생&nbsp;&nbsp;&nbsp;&nbsp;&#58;</span>&nbsp;2001&#46;04&#46;20</p>
-                        <p><span>거주지&nbsp;&#58;</span>&nbsp;대전광역시&nbsp;중구</p>
+                        <p><span>이름</span>&#58;&nbsp;이지영</p>
+                        <p><span>출생</span>&#58;&nbsp;2001&#46;04&#46;20</p>
+                        <p><span>거주지</span>&#58;&nbsp;대전광역시&nbsp;중구</p>
                     </div>
-                    <div class="certificate" data-aos="fade-zoom-in" data-aos-delay="350">
+                    <div class="certificate" data-aos="zoom-in">
                         <h2>certificate</h2>
                         <p>웹디자인기능사(필기합격) 2022.06</p>
                         <p>전산회계2급 2019.08</p>
@@ -80,14 +66,14 @@
                         <p>워드프로세서 2019.05</p>
                         <p>ITQ 아래한글 A등급 2019.05 </p>
                     </div>
-                    <div class="career" data-aos="fade-zoom-in" data-aos-delay="400">
+                    <div class="career" data-aos="zoom-in">
                         <h2>career</h2>
                         <p><span>회사명(업종)&nbsp;&#58;</span>&nbsp;BH유통(통신판매업)</p>
                         <p><span>기간&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#58;</span>&nbsp;2020.05
                             ~ 2022.02</p>
                         <p><span>직급(구분)&nbsp;&nbsp;&nbsp;&nbsp;&#58;</span>&nbsp;대리(정규직)</p>
                     </div>
-                    <div class="skill" data-aos="fade-zoom-in" data-aos-delay="450">
+                    <div class="skill" data-aos="zoom-in">
                         <h2>skill</h2>
                         <div class="skill_list">
                             <p class="tabmenu on" onclick="showEx(event, 'html5')">html5</p>
@@ -112,7 +98,7 @@
                             <div id="adobe_illustrator" class="tabcontent">라인 따기 등 간단한 작업을 할 수 있습니다.</div>
                         </div>
                     </div>
-                    <div class="keyword" data-aos="fade-zoom-in" data-aos-delay="500">
+                    <div class="keyword" data-aos="zoom-in">
                         <h2>keyword</h2>
                         <p><span>#굿리스너</span>잘 말하고 수용하기 위선 잘 듣기부터</p>
                         <p><span>#비둘기</span>존중하고 배려하며, 싸우지 말아요</p>
@@ -187,337 +173,280 @@
                 </div>
             </div>
         </section>
-        <!-- portfolio 시작 -->
-        <section class="portfolio" id="portfolio1">
-            <div class="inner">
-                <header>
-                    <div class="pf_home">
-                        <div class="img"><img src="./images/detail_corn.svg" alt="홈_아이콘"></div>
-                        <span>HOME</span>
+        <!-- portfolio-->
+        <section class="portfolio_con" id="portfolio_con">
+            <header>
+                <nav>
+                    <ul class="pf_gnb">
+                        <li class="apple on">
+                            <img class="basic" src="./images/portfolio__nav1.png" alt="프로젝트1">
+                            <img class="hover" src="./images/portfolio__nav1-1.png" alt="프로젝트1_클릭">
+                            <p>PROJECT01<br>APPLE</p>
+                        </li>
+                        <li class="aquarium">
+                            <img class="basic" src="./images/portfolio__nav2.png" alt="프로젝트2">
+                            <img class="hover" src="./images/portfolio__nav2-2.png" alt="프로젝트2_클릭">
+                            <p>PROJECT02<br>AQUARIUM</p>
+                        </li>
+                        <li class="letter">
+                            <img class="basic" src="./images/portfolio__nav3.png" alt="프로젝트3">
+                            <img class="hover" src="./images/portfolio__nav3-3.png" alt="프로젝트3_클릭">
+                            <p>PROJECT03<br>MOPYEON</p>
+                        </li>
+                    </ul>
+                    <div class="pf_ham">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                    <nav>
-                        <ul class="pf_gnb">
-                            <li class="apple">
-                                <img class="focus" src="./images/portfolio__nav1-1.png" alt="프로젝트1_클릭">
-                                <p>PROJECT01<br>APPLE</p>
-                            </li>
-                            <li class="aquarium">
-                                <img class="basic" src="./images/portfolio__nav2.png" alt="프로젝트2">
-                            </li>
-                            <li class="letter">
-                                <img class="basic" src="./images/portfolio__nav3.png" alt="프로젝트3">
-                            </li>
-                        </ul>
-                        <div class="pf_ham">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </nav>
-                </header>
-                <div class="order">
-                    <p class="pfsub_title">PORTFOLIO 01</p>
-                    <h1 class="pf_title">APPLE RENEWAL</h1>
-                    <div class="link">
-                        <a href="#">
-                            <img src="./images/portfolio_hosting.png" alt="호스팅페이지">
-                        </a>
-                        <a href="#">
-                            <img src="./images/portfolio_git.png" alt="호스팅페이지">
-                        </a>
-                    </div>
-                </div>
-                <div class="proposal">
-                    <div class="list1">
-                        <h2>01. 프로젝트 개요</h2>
-                        <p>제작기간 : 2022.06.14 ~ 2022.06.22</p>
-                        <p>참여도 : 개별 프로젝트, 100%</p>
-                    </div>
-                    <div class="list2">
-                        <h2>02. 기존 사이트 문제점</h2>
-                        <ul>
-                            <li>심심한 디자인
-                                <p>단조로운 레이아웃과 메인 인덱스 부분에 동적 기능이 구현된 부분이 없어 사용자의 흥미를 유발하기 힘드며 서브 페이지로 넘어가야만 애플의 기술력을 느낄 수
-                                    있는
-                                    구조로 되어있다.</p>
-                            </li>
-                            <li>놓쳐버린 브랜드의 이미지
-                                <p>깔끔하고 절제된 듯한 애플이 가지고 있는 특유의 분위기를 잡아내지 못한 느낌이 들며 이름을 대면 누구나 알고 있는 브랜드라 사이트를 잘 만들지 않아도
-                                    사겠지라는
-                                    마음으로 대충 만든듯한 느낌이 든다.</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="list3">
-                        <h2>03. 프로젝트 목표</h2>
-                        <p class="target">“액티비티한 효과와 사용자의 콘텐츠 접근성이 향상된 반응형 웹 사이트”</p>
-                        <ul>
-                            <li>흥미 유발
-                                <p>액티비티한 효과 사용으로 사이트 이용자의 흥미 유발</p>
-                            </li>
-                            <li>트렌드 디자인
-                                <p>디자인 트렌드를 반영하여 깔끔하게 재구성</p>
-                            </li>
-                            <li>접근성 향상
-                                <p>한 눈에 콘텐츠 파악이 가능한 레이아웃으로 재구성</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="list4">
-                        <h2>04. 프로젝트 색상 & 폰트</h2>
-                        <div class="color">
-                            <div>
-                                <img src="./images/portfolio__nav1-1.png" alt="검정색">
-                                <span class="rgb">R : 0<br>G : 0<br>B : 0</span>
-                                <span>#000000</span>
-                            </div>
-                            <div>
-                                <img src="./images/portfolio__nav1.png" alt="흰색">
-                                <span class="rgb">R : 255<br>G : 255<br>B : 255</span>
-                                <span>#ffffff</span>
-                            </div>
-                        </div>
-                        <div class="font">
-                            <p>깔끔하고 고딕한 폰트로 애플의 깔끔하고 세련된 느낌을 표현했습니다.</p>
-                            <div class="ex">
-                                <p>타이틀 : Pretendard — 50pt</p>
-                                <p>서브 타이틀 : Pretendard — 35pt</p>
-                                <p>내용 : Pretendard — 26pt</p>
-                            </div>
+                </nav>
+            </header>
+            <!-- portfolio1 시작 -->
+            <div class="portfolio" id="portfolio1">
+                <div class="inner">
+                    <div class="order">
+                        <p class="pfsub_title">PORTFOLIO 01</p>
+                        <h1 class="pf_title">APPLE RENEWAL</h1>
+                        <div class="link">
+                            <a href="#">
+                                <img src="./images/portfolio_hosting.png" alt="호스팅페이지">
+                            </a>
+                            <a href="#">
+                                <img src="./images/portfolio_git.png" alt="호스팅페이지">
+                            </a>
                         </div>
                     </div>
-                    <div class="list5_6">
-                        <h2>05. 와이어프레임 <span>06. 디자인 적용 및 기능</span></h2>
-                        <img src="./images/portfolio_project1_list5_6.png" alt="">
+                    <div class="proposal">
+                        <div class="list1">
+                            <h2>01. 프로젝트 개요</h2>
+                            <p>제작기간 : 2022.06.14 ~ 2022.06.22</p>
+                            <p>참여도 : 개별 프로젝트, 100%</p>
+                        </div>
+                        <div class="list2">
+                            <h2>02. 기존 사이트 문제점</h2>
+                            <ul>
+                                <li>심심한 디자인
+                                    <p>단조로운 레이아웃과 메인 인덱스 부분에 동적 기능이 구현된 부분이 없어 사용자의 흥미를 유발하기 힘드며 서브 페이지로 넘어가야만 애플의 기술력을 느낄 수
+                                        있는
+                                        구조로 되어있다.</p>
+                                </li>
+                                <li>놓쳐버린 브랜드의 이미지
+                                    <p>깔끔하고 절제된 듯한 애플이 가지고 있는 특유의 분위기를 잡아내지 못한 느낌이 들며 이름을 대면 누구나 알고 있는 브랜드라 사이트를 잘 만들지 않아도
+                                        사겠지라는
+                                        마음으로 대충 만든듯한 느낌이 든다.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list3">
+                            <h2>03. 프로젝트 목표</h2>
+                            <p class="target">“액티비티한 효과와 사용자의 콘텐츠 접근성이 향상된 반응형 웹 사이트”</p>
+                            <ul>
+                                <li>흥미 유발
+                                    <p>액티비티한 효과 사용으로 사이트 이용자의 흥미 유발</p>
+                                </li>
+                                <li>트렌드 디자인
+                                    <p>디자인 트렌드를 반영하여 깔끔하게 재구성</p>
+                                </li>
+                                <li>접근성 향상
+                                    <p>한 눈에 콘텐츠 파악이 가능한 레이아웃으로 재구성</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list4">
+                            <h2>04. 프로젝트 색상 & 폰트</h2>
+                            <div class="color">
+                                <div>
+                                    <img src="./images/portfolio__nav1-1.png" alt="검정색">
+                                    <span class="rgb">R : 0<br>G : 0<br>B : 0</span>
+                                    <span>#000000</span>
+                                </div>
+                                <div>
+                                    <img src="./images/portfolio__nav1.png" alt="흰색">
+                                    <span class="rgb">R : 255<br>G : 255<br>B : 255</span>
+                                    <span>#ffffff</span>
+                                </div>
+                            </div>
+                            <div class="font">
+                                <p>깔끔하고 고딕한 폰트로 애플의 깔끔하고 세련된 느낌을 표현했습니다.</p>
+                                <div class="ex">
+                                    <p>타이틀 : Pretendard — 50pt</p>
+                                    <p>서브 타이틀 : Pretendard — 35pt</p>
+                                    <p>내용 : Pretendard — 26pt</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list5_6">
+                            <h2>05. 와이어프레임 <span>06. 디자인 적용 및 기능</span></h2>
+                            <img src="./images/portfolio_project1_list5_6.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- portfolio2 시작 -->
-        <section class="portfolio" id="portfolio2">
-            <div class="inner">
-                <header>
-                    <div class="pf_home">
-                        <div class="img"><img src="./images/detail_corn.svg" alt="홈_아이콘"></div>
-                        <span>HOME</span>
-                    </div>
-                    <nav>
-                        <ul class="pf_gnb">
-                            <li class="apple">
-                                <img class="focus" src="./images/portfolio__nav1.png" alt="프로젝트1">
-                            </li>
-                            <li class="aquarium">
-                                <img class="basic" src="./images/portfolio__nav2-2.png" alt="프로젝트2_클릭">
-                                <p>PROJECT02<br>AQUARIUM</p>
-                            </li>
-                            <li class="letter">
-                                <img class="basic" src="./images/portfolio__nav3.png" alt="프로젝트3">
-                            </li>
-                        </ul>
-                        <div class="pf_ham">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+            <!-- portfolio2 시작 -->
+            <div class="portfolio" id="portfolio2">
+                <div class="inner">
+                    <div class="order">
+                        <p class="pfsub_title">PORTFOLIO 02</p>
+                        <h1 class="pf_title">YEOSU AQUARIUM RENEWAL</h1>
+                        <div class="link">
+                            <a href="#">
+                                <img src="./images/portfolio_hosting.png" alt="호스팅페이지">
+                            </a>
+                            <a href="#">
+                                <img src="./images/portfolio_git.png" alt="호스팅페이지">
+                            </a>
                         </div>
-                    </nav>
-                </header>
-                <div class="order">
-                    <p class="pfsub_title">PORTFOLIO 02</p>
-                    <h1 class="pf_title">YEOSU AQUARIUM RENEWAL</h1>
-                    <div class="link">
-                        <a href="#">
-                            <img src="./images/portfolio_hosting.png" alt="호스팅페이지">
-                        </a>
-                        <a href="#">
-                            <img src="./images/portfolio_git.png" alt="호스팅페이지">
-                        </a>
+                    </div>
+                    <div class="proposal">
+                        <div class="list1">
+                            <h2>01. 프로젝트 개요</h2>
+                            <p>제작기간 : 2022.06.14 ~ 2022.06.22</p>
+                            <p>참여도 : 개별 프로젝트, 100%</p>
+                        </div>
+                        <div class="list2">
+                            <h2>02. 기존 사이트 문제점</h2>
+                            <ul>
+                                <li>사이트 오류
+                                    <p>1360px정도로 줄이면 처음엔 없었던 Community 섹션 등장하며 모바일 반응형이 바로 적용되지 않고 새로 고침을 해야 적용이 된다.</p>
+                                </li>
+                                <li>조화롭지 않은 반응형
+                                    <p>pc버전 사이트와 조화롭지 않은 디자인과 배너 부분에 아쿠아리움이 아닌 여수 전체 관광 위주 내용이 나온다. 또한 주요 정보들이 표기가 거의 없어
+                                        서브페이지로 이동해야 확인 가능하여 사용자들의 접근성이 떨어진다.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list3">
+                            <h2>03. 프로젝트 목표</h2>
+                            <p class="target">“액티비티한 효과와 사용자의 콘텐츠 접근성이 향상된 반응형 웹 사이트”</p>
+                            <ul>
+                                <li>접근성 향상
+                                    <p>적은 스크롤로 많은 정보를 얻을 수 있도록 레이아웃 구성</p>
+                                </li>
+                                <li>포인트 색상
+                                    <p>사이트와 어울리는 색상인 파란색과 보색 계열인 오렌지 컬러를 섞어 포인트 컬러로 사용</p>
+                                </li>
+                                <li>깔끔한 디자인
+                                    <p>사이트를 보는데 방해되는 요소를 없애고 바로 내용이 파악 되도록 디자인</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list4">
+                            <h2>04. 프로젝트 색상 & 폰트</h2>
+                            <div class="color">
+                                <div>
+                                    <img src="./images/portfolio_AQUARIUM_COLOR.png" alt="파란색">
+                                    <span class="rgb">R : 27<br>G : 164<br>B : 206</span>
+                                    <span>#1BA4CE</span>
+                                </div>
+                                <div>
+                                    <img src="./images/portfolio_AQUARIUM_COLOR2.png" alt="주황색">
+                                    <span class="rgb">R : 255<br>G : 102<br>B : 0</span>
+                                    <span>#FF6600</span>
+                                </div>
+                            </div>
+                            <div class="font">
+                                <p>정보 전달을 주 목적으로 반듯하고 얇은 폰트를 사용하여 가독성을 높였습니다.</p>
+                                <div class="ex">
+                                    <p>타이틀 : 나눔스퀘어 — 45pt</p>
+                                    <p>서브 타이틀 : 나눔스퀘어 — 35pt</p>
+                                    <p>내용 : 나눔스퀘어 — 25pt</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list5_6">
+                            <h2>05. 와이어프레임 <span>06. 디자인 적용 및 기능</span></h2>
+                            <img src="./images/portfolio_project2_list5_6.png" alt="프로젝트2">
+                        </div>
                     </div>
                 </div>
-                <div class="proposal">
-                    <div class="list1">
-                        <h2>01. 프로젝트 개요</h2>
-                        <p>제작기간 : 2022.06.14 ~ 2022.06.22</p>
-                        <p>참여도 : 개별 프로젝트, 100%</p>
-                    </div>
-                    <div class="list2">
-                        <h2>02. 기존 사이트 문제점</h2>
-                        <ul>
-                            <li>사이트 오류
-                                <p>1360px정도로 줄이면 처음엔 없었던 Community 섹션 등장하며 모바일 반응형이 바로 적용되지 않고 새로 고침을 해야 적용이 된다.</p>
-                            </li>
-                            <li>조화롭지 않은 반응형
-                                <p>pc버전 사이트와 조화롭지 않은 디자인과 배너 부분에 아쿠아리움이 아닌 여수 전체 관광 위주 내용이 나온다. 또한 주요 정보들이 표기가 거의 없어 서브페이지로 이동해야 확인 가능하여 사용자들의 접근성이 떨어진다.</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="list3">
-                        <h2>03. 프로젝트 목표</h2>
-                        <p class="target">“액티비티한 효과와 사용자의 콘텐츠 접근성이 향상된 반응형 웹 사이트”</p>
-                        <ul>
-                            <li>접근성 향상
-                                <p>적은 스크롤로 많은 정보를 얻을 수 있도록 레이아웃 구성</p>
-                            </li>
-                            <li>포인트 색상
-                                <p>사이트와 어울리는 색상인 파란색과 보색 계열인 오렌지 컬러를 섞어 포인트 컬러로 사용</p>
-                            </li>
-                            <li>깔끔한 디자인
-                                <p>사이트를 보는데 방해되는 요소를 없애고 바로 내용이 파악 되도록 디자인</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="list4">
-                        <h2>04. 프로젝트 색상 & 폰트</h2>
-                        <div class="color">
-                            <div>
-                                <img src="./images/portfolio_AQUARIUM_COLOR.png" alt="파란색">
-                                <span class="rgb">R : 27<br>G : 164<br>B : 206</span>
-                                <span>#1BA4CE</span>
-                            </div>
-                            <div>
-                                <img src="./images/portfolio_AQUARIUM_COLOR2.png" alt="주황색">
-                                <span class="rgb">R : 255<br>G : 102<br>B : 0</span>
-                                <span>#FF6600</span>
-                            </div>
-                        </div>
-                        <div class="font">
-                            <p>정보 전달을 주 목적으로 반듯하고 얇은 폰트를 사용하여 가독성을 높였습니다.</p>
-                            <div class="ex">
-                                <p>타이틀 : 나눔스퀘어 — 45pt</p>
-                                <p>서브 타이틀 : 나눔스퀘어 — 35pt</p>
-                                <p>내용 : 나눔스퀘어 — 25pt</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list5_6">
-                        <h2>05. 와이어프레임 <span>06. 디자인 적용 및 기능</span></h2>
-                        <img src="./images/portfolio_project2_list5_6.png" alt="프로젝트2">
-                    </div>
             </div>
-        </section>
-        <!-- portfolio3 시작 -->
-        <section class="portfolio" id="portfolio3">
-            <div class="inner">
-                <header>
-                    <div class="pf_home">
-                        <div class="img"><img src="./images/detail_corn.svg" alt="홈_아이콘"></div>
-                        <span>HOME</span>
-                    </div>
-                    <nav>
-                        <ul class="pf_gnb">
-                            <li class="apple">
-                                <img class="focus" src="./images/portfolio__nav1.png" alt="프로젝트1">
-                            </li>
-                            <li class="aquarium">
-                                <img class="basic" src="./images/portfolio__nav2.png" alt="프로젝트2">
-                            </li>
-                            <li class="letter">
-                                <img class="basic" src="./images/portfolio__nav3-3.png" alt="프로젝트3_클릭">
-                                <p>PROJECT03<br>MOPYEON</p>
-                            </li>
-                        </ul>
-                        <div class="pf_ham">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+            <!-- portfolio3 시작 -->
+            <div class="portfolio" id="portfolio3">
+                <div class="inner">
+                    <div class="order">
+                        <p class="pfsub_title">PORTFOLIO 03</p>
+                        <h1 class="pf_title">MOPYEON RENEWAL</h1>
+                        <div class="link">
+                            <a href="#">
+                                <img src="./images/portfolio_hosting.png" alt="호스팅페이지">
+                            </a>
+                            <a href="#">
+                                <img src="./images/portfolio_git.png" alt="호스팅페이지">
+                            </a>
                         </div>
-                    </nav>
-                </header>
-                <div class="order">
-                    <p class="pfsub_title">PORTFOLIO 03</p>
-                    <h1 class="pf_title">MOPYEON RENEWAL</h1>
-                    <div class="link">
-                        <a href="#">
-                            <img src="./images/portfolio_hosting.png" alt="호스팅페이지">
-                        </a>
-                        <a href="#">
-                            <img src="./images/portfolio_git.png" alt="호스팅페이지">
-                        </a>
+                    </div>
+                    <div class="proposal">
+                        <div class="list1">
+                            <h2>01. 프로젝트 개요</h2>
+                            <p>제작기간 : 2022.06.14 ~ 2022.06.22</p>
+                            <p>참여도 : 개별 프로젝트, 100%</p>
+                        </div>
+                        <div class="list2">
+                            <h2>02. 기존 사이트 문제점</h2>
+                            <ul>
+                                <li>어울리지 않는 디자인
+                                    <p>감성적이고 아날로그적인 편지라는 아이템에 비해 구성된 사이트는 밋밋하고 감성은 찾기가 힘든 디자인이며 큰 부분을 차지 하지 않아도 될 내용이 큰 부분을
+                                        차지하고 있다.</p>
+                                </li>
+                                <li>노출 빈도가 낮은 구독서비스
+                                    <p>사이트의 주 서비스인 구독으로 이어지는 링크가 된 것이 거의 없어 사용자들에게 인식하기 힘드며 유입률 또한 낮아질 것이다.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list3">
+                            <h2>03. 프로젝트 목표</h2>
+                            <p class="target">“액티비티한 효과와 사용자의 콘텐츠 접근성이 향상된 반응형 웹 사이트”</p>
+                            <ul>
+                                <li>사용자 유입
+                                    <p>주 서비스인 구독의 노출수를 늘려 사용자 유입</p>
+                                </li>
+                                <li>아날로그 디자인
+                                    <p>편지의 아날로그 감성을 살린 디자인</p>
+                                </li>
+                                <li>접근성 향상
+                                    <p>주 기능들을 찾지 않아도 여러 곳에서 바로 사용 가능하도록 구성하여 접근성 향상</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list4">
+                            <h2>04. 프로젝트 색상 & 폰트</h2>
+                            <div class="color">
+                                <div>
+                                    <img src="./images/portfolio_LETTER_COLOR.png" alt="베이지">
+                                    <span class="rgb">R : 228<br>G : 206<br>B : 183</span>
+                                    <span>#E4CEB7</span>
+                                </div>
+                                <div>
+                                    <img src="./images/portfolio_LETTER_COLOR2.png" alt="연두">
+                                    <span class="rgb">R : 160<br>G : 212<br>B : 104</span>
+                                    <span>#A0D468</span>
+                                </div>
+                                <div>
+                                    <img src="./images/portfolio_LETTER_COLOR3.png" alt="빨강">
+                                    <span class="rgb">R : 172<br>G : 47<br>B : 61</span>
+                                    <span>#AC2F3D</span>
+                                </div>
+                            </div>
+                            <div class="font">
+                                <p>사이트의 분위기와 가독성 모두 만족시킨 손글씨 느낌이지만 깔끔한 폰트를 사용했습니다.</p>
+                                <div class="ex">
+                                    <p>타이틀 : 리디바탕 — 50pt</p>
+                                    <p>서브 타이틀 : 제주명조 — 35pt</p>
+                                    <p>내용 : 제주명조 — 28pt</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list5_6">
+                            <h2>05. 와이어프레임 <span>06. 디자인 적용 및 기능</span></h2>
+                            <img src="./images/portfolio_project3_list5_6.png" alt="프로젝트3">
+                        </div>
                     </div>
                 </div>
-                <div class="proposal">
-                    <div class="list1">
-                        <h2>01. 프로젝트 개요</h2>
-                        <p>제작기간 : 2022.06.14 ~ 2022.06.22</p>
-                        <p>참여도 : 개별 프로젝트, 100%</p>
-                    </div>
-                    <div class="list2">
-                        <h2>02. 기존 사이트 문제점</h2>
-                        <ul>
-                            <li>어울리지 않는 디자인
-                                <p>감성적이고 아날로그적인 편지라는 아이템에 비해 구성된 사이트는 밋밋하고 감성은 찾기가 힘든 디자인이며 큰 부분을 차지 하지 않아도 될 내용이 큰 부분을 차지하고 있다.</p>
-                            </li>
-                            <li>노출 빈도가 낮은 구독서비스
-                                <p>사이트의 주 서비스인 구독으로 이어지는 링크가 된 것이 거의 없어 사용자들에게 인식하기 힘드며 유입률 또한 낮아질 것이다.</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="list3">
-                        <h2>03. 프로젝트 목표</h2>
-                        <p class="target">“액티비티한 효과와 사용자의 콘텐츠 접근성이 향상된 반응형 웹 사이트”</p>
-                        <ul>
-                            <li>사용자 유입
-                                <p>주 서비스인 구독의 노출수를 늘려 사용자 유입</p>
-                            </li>
-                            <li>아날로그 디자인
-                                <p>편지의 아날로그 감성을 살린 디자인</p>
-                            </li>
-                            <li>접근성 향상
-                                <p>주 기능들을 찾지 않아도 여러 곳에서 바로 사용 가능하도록 구성하여 접근성 향상</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="list4">
-                        <h2>04. 프로젝트 색상 & 폰트</h2>
-                        <div class="color">
-                            <div>
-                                <img src="./images/portfolio_LETTER_COLOR.png" alt="베이지">
-                                <span class="rgb">R : 228<br>G : 206<br>B : 183</span>
-                                <span>#E4CEB7</span>
-                            </div>
-                            <div>
-                                <img src="./images/portfolio_LETTER_COLOR2.png" alt="연두">
-                                <span class="rgb">R : 160<br>G : 212<br>B : 104</span>
-                                <span>#A0D468</span>
-                            </div>
-                            <div>
-                                <img src="./images/portfolio_LETTER_COLOR3.png" alt="빨강">
-                                <span class="rgb">R : 172<br>G : 47<br>B : 61</span>
-                                <span>#AC2F3D</span>
-                            </div>
-                        </div>
-                        <div class="font">
-                            <p>사이트의 분위기와 가독성 모두 만족시킨 손글씨 느낌이지만  깔끔한 폰트를 사용했습니다.</p>
-                            <div class="ex">
-                                <p>타이틀 : 리디바탕 — 50pt</p>
-                                <p>서브 타이틀 : 제주명조 — 35pt</p>
-                                <p>내용 : 제주명조 — 28pt</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list5_6">
-                        <h2>05. 와이어프레임 <span>06. 디자인 적용 및 기능</span></h2>
-                        <img src="./images/portfolio_project3_list5_6.png" alt="프로젝트3">
-                    </div>
             </div>
         </section>
         <!-- contact 시작 -->
         <section class="contact" id="contact">
             <div class="inner">
-                <header>
-                    <nav>
-                        <ul class="detail_gnb ct_nav">
-                            <li class="home_nav">HOME</li>
-                            <li class="aboutme_nav"> ABOUT ME</li>
-                            <li class="portfolio_nav">PORTFOLIO</li>
-                            <li class="contact_nav">CONTACT</li>
-                        </ul>
-                        <div class="detail_ham">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </nav>
-                </header>
                 <div class="ct_title">
                     <p>회사의 발전은 나의 발전!</p>
                     <h1>contact me!</h1>
@@ -558,6 +487,11 @@
             </div>
         </section>
     </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

@@ -6,16 +6,20 @@
     font-style: normal;
 }
 
+body{
+    overflow: hidden;
+}
+
 .wrap{
     position: relative;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
 }
 
 body * {
     /* border: 1px solid lightgreen; */
     font-family: 'GmarketSansMedium';
+    font-weight: lighter;
 }
 
 .inner {
@@ -38,6 +42,59 @@ body section.on{
     /* display: block; */
     opacity: 1;
     visibility:visible
+}
+
+/* nav */
+body > header {
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    margin: 1rem 0 0 1rem;
+}
+
+.hd_up {
+    top: -100%;
+}
+
+.gnb {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.gnb li:hover::before {
+    width: 80%;
+}
+
+.gnb li{
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    font-size: 25px;
+    position: relative;
+    color: white;
+}
+
+.gnb li::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: white;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+.gnb.detail li{
+    color: #280841;
+}
+
+.gnb.detail li::before{
+    background-color: #280841;
 }
 
 /* 메인 홈 화면 */
@@ -84,38 +141,6 @@ body section.on{
     backface-visibility: hidden;
 }
 
-/* 메뉴 */
-.gnb {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.gnb li:hover::before {
-    width: 90%;
-}
-
-.gnb li{
-    text-align: center;
-    padding: 1rem 1.5rem;
-    font-weight: bold;
-    font-size: 25px;
-    position: relative;
-    color: white;
-}
-
-.gnb li::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background-color: white;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: 0.3s;
-}
-
 /* 메인 타이틀 */
 .title {
     position: absolute;
@@ -154,67 +179,6 @@ body section.on{
         position: absolute;
         bottom: 0;
     }
-
-    nav {
-        display: flex;
-        justify-content: right;
-    }
-
-    .gnb.on {
-        display: flex;
-    }
-
-    .gnb {
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: 100vh;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .ham {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 35px;
-        height: 30px;
-        z-index: 100;
-        position: relative;
-        margin-top: 1rem;
-    }
-
-    .ham.on span:nth-of-type(1),
-    .ham.on span:nth-of-type(3) {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-    }
-
-    .ham.on span:nth-of-type(1) {
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
-
-    .ham.on span:nth-of-type(3) {
-        transform: translate(-50%, -50%) rotate(-45deg);
-    }
-
-    .ham.on span:nth-of-type(2) {
-        display: none;
-    }
-
-    .ham span {
-        width: 100%;
-        height: 3px;
-        background-color: white;
-        border-radius: 3px;
-        transition: 0.3s;
-    }
 }
 /* 메인 홈 끝 */
 
@@ -231,118 +195,13 @@ body section.on{
 .aboutMe.on{
     left: 0;
     z-index: 1000;
-    height: 400vh;
 }
 
 .aboutMe .inner > header{
     position: absolute;
     width: 100%;
+    height: 300vh;
     z-index: 50;
-}
-
-.detail_gnb {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.detail_gnb li:hover::before {
-    width: 90%;
-}
-
-.detail_gnb li{
-    text-align: center;
-    padding: 1rem 1.5rem;
-    font-weight: bold;
-    font-size: 25px;
-    position: relative;
-    color: #280841;
-}
-
-.detail_gnb li::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background-color: #280841;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: 0.3s;
-}
-
-.detail_ham {
-    display: none;
-}
-
-/* about me header 모바일 */
-@media (max-width:760px) {
-    header {
-        z-index: 100;
-    }
-
-    nav {
-        display: flex;
-        justify-content: right;
-    }
-
-    .detail_gnb {
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100vw;
-        height: 100vh;
-        background-color: #fff;
-        margin-top: 0;
-    }
-
-    .detail_gnb.on {
-        display: flex;
-    }
-
-    .detail_ham {
-        display: flex;
-        width: 35px;
-        height: 30px;
-        position: relative;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1rem;
-        z-index: 101;
-    }
-
-    .detail_ham.on span:nth-of-type(1),
-    .detail_ham.on span:nth-of-type(3) {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-    }
-
-    .detail_ham.on span:nth-of-type(1) {
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
-
-    .detail_ham.on span:nth-of-type(3) {
-        transform: translate(-50%, -50%) rotate(-45deg);
-    }
-
-    .detail_ham.on span:nth-of-type(2) {
-        display: none;
-    }
-
-    .detail_ham span {
-        width: 100%;
-        height: 3px;
-        background-color: #803790;
-        border-radius: 3px;
-        transition: 0.3s;
-    }
 }
 
 /* about me 배경 */
@@ -434,6 +293,11 @@ body section.on{
 
 .skill, .keyword{
     width: calc(100% / 2 - 50px);
+}
+
+.whoami p span {
+    display: inline-block;
+    width: 63px;
 }
 
 .am_list h2{
@@ -551,6 +415,7 @@ body section.on{
 /* about me tmi */
 .am_tmi{
     padding: 120px 0;
+    height: 100vh;
     display: flex;
     position: relative;
     flex-wrap: wrap;
@@ -564,7 +429,7 @@ body section.on{
     -webkit-text-stroke: 3px #803790;
     color: transparent;
     position: absolute;
-    top: -10%;
+    top: -15%;
     left: 0;
 }
 
@@ -572,7 +437,7 @@ body section.on{
     font-size: 20px;
     font-weight: 100;
     position: absolute;
-    top: 10%;
+    top: 6%;
 }
 
 .hobby {
@@ -592,7 +457,7 @@ body section.on{
     justify-content: space-between;
     border-radius: 20px;
     border: 1px solid #803790;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .hobby > div:last-of-type{
@@ -670,16 +535,30 @@ body section.on{
 }
 
 /* portfolio */
-.portfolio{
+.portfolio_con{
     position: absolute;
-    top: -100vh;
+    top: 100vh;
     width: 100vw;
     transition: 0.3s;
+    background-color: black;
 }
 
-.portfolio.on{
-z-index: 1000;
-top: 0;
+.portfolio_con.on{
+    z-index: 1000;
+    top: 0;
+}
+
+.portfolio_con .portfolio{
+    display: none;
+}
+
+.portfolio_con .portfolio.on{
+    display: block;
+}
+
+.portfolio_con > .portfolio{
+    position: absolute;
+    width: 100%;
 }
 
 #portfolio1{
@@ -691,9 +570,11 @@ top: 0;
     background-color: #1BA4CE;
 }
 
+
 #portfolio3{
     background-color: #e4ceb7;
 }
+
 
 .portfolio .inner{
     position: relative;
@@ -712,37 +593,17 @@ top: 0;
     justify-content: center;
 }
 
-.portfolio .pf_home{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    background-color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; 
-    position: absolute;
-    top: 0; 
-    left: 0;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-}
-
-.portfolio .pf_home .img{
-    width: 45%;
-    transform: rotate(15deg) translateX(10%);
-}
-
-.pf_home span{
-    color: #803790;
-    font-size: 12px;
-}
-
 .pf_gnb{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0;
+    margin-top: 8rem;
+    z-index: 500;
 }
 
 .pf_gnb li {
@@ -756,6 +617,8 @@ top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .pf_gnb li:first-of-type::before, .pf_gnb li:last-of-type::before{
@@ -776,16 +639,22 @@ top: 0;
     right: -90%;
 }
 
-#portfolio1 .apple, #portfolio2 .aquarium, #portfolio3 .letter{
+.pf_gnb li.on, .pf_gnb li:hover{
     background-color: white;
 }
 
-.aquarium img{
-    width: 80%;
+.pf_gnb li img{
+    position: absolute;
+    width: 60%;
+    transition: 0.3s;
 }
 
-.letter img{
-    width: 78%;
+.pf_gnb li:hover .hover, .pf_gnb li.on .hover{
+    opacity: 1;
+}
+
+.pf_gnb li:hover .basic, .pf_gnb li.on .basic, .pf_gnb li .hover{
+    opacity: 0;
 }
 
 .pf_gnb li p{
@@ -797,6 +666,12 @@ top: 0;
     text-align: center;
     line-height: 1.2;
     color: white;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.pf_gnb li.on p{
+    opacity: 1;
 }
 
 .pf_ham {
@@ -832,6 +707,8 @@ top: 0;
 
 .portfolio .inner{
     position: relative;
+    z-index: 50;
+    padding-top: 100vh;
 }
 
 .order{
@@ -884,11 +761,9 @@ top: 0;
 .proposal{
     position: absolute;
     width: 100%;
-    top: 72%;
+    top: 73%;
     padding: 70px 122px;
-    z-index: 100;
-    background-color: #fff;
-    border-radius: 30px;
+    /* z-index: 100; */
     font-size: 20px;
     font-weight: 100;
 }
@@ -899,11 +774,35 @@ top: 0;
 }
 
 .proposal::before{
-    bottom: -70px;
+    width: 100vw;
+    height: 93.5%;
+    top: 9%;
+    left: 50%;
+    z-index: -1000;
+    transform: translateX(-50%);
+}
+
+.proposal::after{
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    height: 70px;
+    height: 100%;
+    background-color: white;
+    border-radius: 30px;
+    z-index: -99;
+}
+
+#portfolio1 .proposal::before{
+    background-color: black;
+}
+
+#portfolio2 .proposal::before{
+    background-color: #1BA4CE;
+}
+
+#portfolio3 .proposal::before{
+    background-color: #e4ceb7;
 }
 
 .proposal > div{
@@ -1186,10 +1085,15 @@ top: 0;
     justify-content: space-between;
     align-items: center;
     height: 100vh;
+    position: relative;
 }
 
-.contact .inner header{
-    justify-self: flex-start;
+.contact .inner > header{
+    position: absolute;
+    width: 100%;
+    z-index: 50;
+    top: 0;
+    left: 0;
 }
 
 .ct_title{

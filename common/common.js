@@ -1,3 +1,8 @@
+
+
+
+
+// 메인 배경
 let stars=800;
 let $stars=$(".stars");
 let r=800;
@@ -15,6 +20,26 @@ $(".star").each(function(){
   })
 })
 
+// about me skill
+function showEx(evt, exList) {
+  let i, tabmenu, tabcontent;
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i=0; i<tabcontent.length; i++){
+      tabcontent[i].style.display = "none";
+  }
+
+  tabmenu = document.getElementsByClassName("tabmenu");
+  for (i=0; i<tabmenu.length; i++){
+      tabmenu[i].className = tabmenu[i].className.replace(" on", "");
+  }
+  
+  document.getElementById(exList).style.display = "flex";
+  evt.currentTarget.className += " on";
+}
+
+
+
 $(function(){
   $('.ham').click(function(){
     $('.mb_title').toggleClass('on')
@@ -22,90 +47,76 @@ $(function(){
     $('.ham').toggleClass('on')
   })
 
-
-  // main nav
-  $('.gnb > .aboutme_nav').click(function(){
-    $('section').removeClass('on')
-    $('#aboutMe').toggleClass('on')
+  // gnb
+  $('.aboutme_nav, .contact_nav').click(function(){
+      $('.gnb').addClass('detail')
   })
 
-  $('.gnb > .contact_nav').click(function(){
-    $('section').removeClass('on')
-    $('#contact').toggleClass('on')
+  $('.home_nav, .portfolio_nav').click(function(){
+    $('.gnb').removeClass('detail')
   })
 
-  $('.gnb > .portfolio_nav').click(function(){
+  $('.home_nav').click(function(){
     $('section').removeClass('on')
-    $('#portfolio1').toggleClass('on')
+    $('#portfolio_con > div').removeClass('on')
+    $('#main').addClass('on')
+    $('.wrap').css({overflow: 'hidden', width: '100vw', height: '100vh'})
   })
 
-  // about me nav
-  $('.ab_nav > .home_nav').click(function(){
+  $('.aboutme_nav').click(function(){
     $('section').removeClass('on')
-    $('.main').toggleClass('on')
+    $('#portfolio_con > div').removeClass('on')
+    $('#aboutMe').addClass('on')
+    $('.wrap').css({overflowY: 'auto', width: 'auto', height: 'auto'})
   })
 
-  $('.ab_nav > .portfolio_nav').click(function(){
+  $('.portfolio_nav').click(function(){
     $('section').removeClass('on')
-    $('#portfolio1').toggleClass('on')
+    $('#portfolio_con > div').removeClass('on')
+    $('#portfolio_con, #portfolio1').addClass('on')
+    $('.pf_gnb > li').removeClass('on')
+    $('.pf_gnb .apple').addClass('on')
+    $('.wrap').css({overflowY: 'auto', width: 'auto', height: 'auto'})
   })
 
-  $('.ab_nav > .contact_nav').click(function(){
+  $('.contact_nav').click(function(){
     $('section').removeClass('on')
-    $('#contact').toggleClass('on')
-  })
-
-  // contact nav
-  $('.ct_nav > .home_nav').click(function(){
-    $('section').removeClass('on')
-    $('.main').toggleClass('on')
-  })
-
-  $('.ct_nav > .aboutme_nav').click(function(){
-    $('section').removeClass('on')
-    $('#aboutMe').toggleClass('on')
-  })
-
-  $('.ct_nav > .portfolio_nav').click(function(){
-    $('section').removeClass('on')
-    $('#portfolio1').toggleClass('on')
+    $('#portfolio_con > div').removeClass('on')
+    $('#contact').addClass('on')
+    $('.wrap').css({overflow: 'hidden', width: '100vw', height: '100vh'})
   })
 
   // portfolio1 nav
-  $('.pf_home').click(function(){
-    $('section').removeClass('on')
-    $('.main').addClass('on')
+  let pf_gnb = $('.pf_gnb > li').click(function(){
+    $('.pf_gnb > li').removeClass('on')
+    $(this).addClass('on')
+
+    let idx = pf_gnb.index(this)
+
+    $('.portfolio').removeClass('on')
+    $('.portfolio').eq(idx).addClass('on')
   })
 
-  $('#portfolio1 .pf_gnb > .aquarium').click(function(){
-    $('section').removeClass('on')
-    $('#portfolio2').toggleClass('on')
-  })
 
-  $('#portfolio1 .pf_gnb > .letter').click(function(){
-    $('section').removeClass('on')
-    $('#portfolio3').toggleClass('on')
-  })
 
-  // portfolio2 nav
-  $('#portfolio2 .pf_gnb > .apple').click(function(){
-    $('section').removeClass('on')
-    $('#portfolio1').toggleClass('on')
-  })
+  // 스크롤 시 header
+  var lastScrollTop = 0, delta = 15;
 
-  $('#portfolio2 .pf_gnb > .letter').click(function(){
-    $('section').removeClass('on')
-    $('#portfolio3').toggleClass('on')
-  })
+  $('#aboutMe').on('scroll', function(){
+      // let scrollTop = $(this).scrollTop()
+      // if(Math.abs(lastScrollTop - scrollTop) <= delta)
+      // return;
+      // if ((scrollTop > lastScrollTop) && (lastScrollTop>0)) {
+      //     $("#hd").css("top","-100%");
+      // } else {
+      //     $("#hd").css("top","0px");
+      // }
+      // lastScrollTop = scrollTop;
 
-   // portfolio3 nav
-   $('#portfolio3 .pf_gnb > .apple').click(function(){
-    $('section').removeClass('on')
-    $('#portfolio1').toggleClass('on')
-  })
+      let scroll = $(this).scrollTop()
+      console.log(scroll)
+  });
 
-  $('#portfolio3 .pf_gnb > .aquarium').click(function(){
-    $('section').removeClass('on')
-    $('#portfolio2').toggleClass('on')
-  })
+
+
 })
