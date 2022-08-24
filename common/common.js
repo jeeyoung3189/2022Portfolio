@@ -1,7 +1,3 @@
-
-
-
-
 // 메인 배경
 let stars=800;
 let $stars=$(".stars");
@@ -20,25 +16,23 @@ $(".star").each(function(){
   })
 })
 
-// about me skill
-function showEx(evt, exList) {
-  let i, tabmenu, tabcontent;
-
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i=0; i<tabcontent.length; i++){
-      tabcontent[i].style.display = "none";
-  }
-
-  tabmenu = document.getElementsByClassName("tabmenu");
-  for (i=0; i<tabmenu.length; i++){
-      tabmenu[i].className = tabmenu[i].className.replace(" on", "");
-  }
+  // about me skill
+  function showEx(evt, exList) {
+    let i, tabmenu, tabcontent;
   
-  document.getElementById(exList).style.display = "flex";
-  evt.currentTarget.className += " on";
-}
-
-
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i=0; i<tabcontent.length; i++){
+        tabcontent[i].style.display = "none";
+    }
+  
+    tabmenu = document.getElementsByClassName("tabmenu");
+    for (i=0; i<tabmenu.length; i++){
+        tabmenu[i].className = tabmenu[i].className.replace(" on", "");
+    }
+    
+    document.getElementById(exList).style.display = "flex";
+    evt.currentTarget.className += " on";
+  }
 
 $(function(){
   $('.ham').click(function(){
@@ -47,7 +41,7 @@ $(function(){
     $('.ham').toggleClass('on')
   })
 
-  // gnb
+  // header gnb
   $('.aboutme_nav, .contact_nav').click(function(){
       $('.gnb').addClass('detail')
   })
@@ -56,67 +50,60 @@ $(function(){
     $('.gnb').removeClass('detail')
   })
 
-  $('.home_nav').click(function(){
+  $('.gnb > li').click(function(){
     $('section').removeClass('on')
     $('#portfolio_con > div').removeClass('on')
-    $('#main').addClass('on')
     $('.wrap').css({overflow: 'hidden', width: '100vw', height: '100vh'})
+  })
+
+  $('.home_nav').click(function(){
+    $('#main').addClass('on')
   })
 
   $('.aboutme_nav').click(function(){
-    $('section').removeClass('on')
-    $('#portfolio_con > div').removeClass('on')
     $('#aboutMe').addClass('on')
-    $('.wrap').css({overflowY: 'auto', width: 'auto', height: 'auto'})
   })
 
   $('.portfolio_nav').click(function(){
-    $('section').removeClass('on')
-    $('#portfolio_con > div').removeClass('on')
     $('#portfolio_con, #portfolio1').addClass('on')
     $('.pf_gnb > li').removeClass('on')
     $('.pf_gnb .apple').addClass('on')
+  })
+  
+  $('.aboutme_nav, .portfolio_nav').click(function(){
     $('.wrap').css({overflowY: 'auto', width: 'auto', height: 'auto'})
+
+      // 스크롤 시 header
+      $('.wrap').on('scroll', function(){
+        let scroll = $(this).scrollTop()
+        if(scroll < 0 || scroll > 1){
+          $('#hd').stop().animate({top:'-300px'}, 200)
+        } else {
+          $('#hd').stop().animate({top:'0px'}, 200)
+        }
+        if(scroll < 0 || scroll > 600){
+          $('.whoami, .certificate, .career').addClass('show')
+        } else {
+          $('.whoami, .certificate, .career').removeClass('show')
+        }
+        if(scroll < 0 || scroll > 700){
+          $('.skill, .keyword').addClass('show')
+        } else {
+          $('.skill, .keyword').removeClass('show')
+        }
+    });
   })
 
   $('.contact_nav').click(function(){
-    $('section').removeClass('on')
-    $('#portfolio_con > div').removeClass('on')
     $('#contact').addClass('on')
-    $('.wrap').css({overflow: 'hidden', width: '100vw', height: '100vh'})
   })
 
-  // portfolio1 nav
+  // portfolio nav
   let pf_gnb = $('.pf_gnb > li').click(function(){
     $('.pf_gnb > li').removeClass('on')
     $(this).addClass('on')
-
     let idx = pf_gnb.index(this)
-
     $('.portfolio').removeClass('on')
     $('.portfolio').eq(idx).addClass('on')
   })
-
-
-
-  // 스크롤 시 header
-  var lastScrollTop = 0, delta = 15;
-
-  $('#aboutMe').on('scroll', function(){
-      // let scrollTop = $(this).scrollTop()
-      // if(Math.abs(lastScrollTop - scrollTop) <= delta)
-      // return;
-      // if ((scrollTop > lastScrollTop) && (lastScrollTop>0)) {
-      //     $("#hd").css("top","-100%");
-      // } else {
-      //     $("#hd").css("top","0px");
-      // }
-      // lastScrollTop = scrollTop;
-
-      let scroll = $(this).scrollTop()
-      console.log(scroll)
-  });
-
-
-
 })
