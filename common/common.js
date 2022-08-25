@@ -36,18 +36,27 @@ $(".star").each(function(){
 
 $(function(){
   $('.ham').click(function(){
-    $('.mb_title').toggleClass('on')
-    $('.gnb').toggleClass('on')
     $('.ham').toggleClass('on')
+    $('.gnb').toggleClass('on')
+    $('.mb_title').toggleClass('on')
+  })
+
+  $('.gnb > li').click(function(){
+    $('.ham, .gnb, .mb_title').removeClass('on')
+    $('.ham, .gnb, .mb_title').removeClass('mb')
   })
 
   // header gnb
   $('.aboutme_nav, .contact_nav').click(function(){
-      $('.gnb').addClass('detail')
+      $('.gnb, .ham').addClass('detail')
   })
 
+  $('.portfolio_nav').click(function(){
+    $('.gnb, .ham').addClass('mb')
+})
+
   $('.home_nav, .portfolio_nav').click(function(){
-    $('.gnb').removeClass('detail')
+    $('.gnb, .ham').removeClass('detail')
   })
 
   $('.gnb > li').click(function(){
@@ -71,7 +80,7 @@ $(function(){
   })
   
   $('.aboutme_nav, .portfolio_nav').click(function(){
-    $('.wrap').css({overflowY: 'auto', width: 'auto', height: 'auto'})
+    $('.wrap').css({overflowY: 'scroll', width: 'auto', height: 'auto'})
 
       // 스크롤 시 header
       $('.wrap').on('scroll', function(){
