@@ -875,6 +875,7 @@ body > header .inner{
     width: 100vw;
     transition: 0.3s;
     background-color: black;
+    /* overflow: hidden; */
 }
 
 .portfolio_con.on{
