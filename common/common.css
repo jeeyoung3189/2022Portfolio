@@ -319,6 +319,7 @@ body > header .inner{
 /* about me 배경 */
 .aboutMe_bg{
     width: 100%;
+    
     height: 100vh;
     display: flex;
     justify-content: center;
