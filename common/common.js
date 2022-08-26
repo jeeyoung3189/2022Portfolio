@@ -71,6 +71,7 @@ $(function(){
 
   $('.aboutme_nav').click(function(){
     $('#aboutMe').addClass('on')
+    $('.aboutMe.on').css({left:'-100vw'}).delay(1).animate({left:0});
   })
 
   $('.portfolio_nav').click(function(){

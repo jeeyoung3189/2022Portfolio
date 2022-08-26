@@ -48,13 +48,12 @@ img{
 body .wrap > *{
     /* display: none; */
     opacity: 0;
-    visibility:hidden
 }
 
 body section.on{
     /* display: block; */
     opacity: 1;
-    visibility:visible
+    z-index: 1000;
 }
 
 /* nav */
@@ -303,13 +302,11 @@ body > header .inner{
     width: 100vw;
     background-color: white;
     top: 0;
-    left: -100vw;
-    transition: 0.3s;
+    display: none;
 }
 
 .aboutMe.on{
-    left: 0;
-    z-index: 1000;
+    display: block;
 }
 
 .aboutMe .inner > header{
@@ -879,7 +876,6 @@ body > header .inner{
 }
 
 .portfolio_con.on{
-    z-index: 1000;
     top: 0;
 }
 
@@ -1668,7 +1664,6 @@ body > header .inner{
 
 .contact.on{
     left: 0;
-    z-index: 1000;
 }
 
 .contact .inner{
