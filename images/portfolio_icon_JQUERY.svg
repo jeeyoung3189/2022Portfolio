@@ -2,8 +2,11 @@
 <!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 509.4 509.4" style="enable-background:new 0 0 509.4 509.4;" xml:space="preserve">
-<path d="M457.4,504.7H52c-26,0-47.3-21.3-47.3-47.3V52C4.7,26,26,4.7,52,4.7h405.4c26,0,47.3,21.3,47.3,47.3v405.4
-	C504.7,483.4,483.4,504.7,457.4,504.7z"/>
-<image style="overflow:visible;" width="512" height="512" xlink:href="JQUERY2.png"  transform="matrix(0.7937 0 0 0.7937 51.5 51.5)">
-</image>
+<g>
+	<path d="M461.4,504.7H56c-26,0-47.3-21.3-47.3-47.3V52C8.7,26,30,4.7,56,4.7h405.4c26,0,47.3,21.3,47.3,47.3v405.4
+		C508.7,483.4,487.4,504.7,461.4,504.7z"/>
+	
+		<image style="overflow:visible;" width="512" height="512" xlink:href="../../시안/시안 이미지/JQUERY2.png"  transform="matrix(1 0 0 1 2.7415 -1.3085)">
+	</image>
+</g>
 </svg>

@@ -424,12 +424,12 @@ body > header .inner{
     width: 115px;
 }
 
-.keyword span{
+.keyword p{
     display: block;
     margin-bottom: 15px;
 }
 
-.keyword span p{
+.keyword p span{
     width: 180px;
     display: inline-block;
     font-weight: bold;
@@ -1364,16 +1364,16 @@ body > header .inner{
     font-weight: 100;
 }
 
-#portfolio1 .font .ex p:first-of-type, #portfolio3 .font .ex p:first-of-type{
-    font-size: 50px;
+#portfolio1 .font .ex p:first-of-type{
+    font-size: 40px;
 }
 
 #portfolio1 .font .ex p:nth-of-type(2), #portfolio2 .font .ex p:nth-of-type(2), #portfolio3 .font .ex p:nth-of-type(2){
-    font-size: 35px;
+    font-size: 30px;
 }
 
 #portfolio1 .font .ex p:last-of-type{
-    font-size: 26px;
+    font-size: 24px;
 }
 
 #portfolio2 .list4 .font .ex *{
@@ -1386,7 +1386,7 @@ body > header .inner{
 }
 
 #portfolio2 .font .ex p:last-of-type{
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #portfolio3 .list4 .font .ex *{
@@ -1396,10 +1396,11 @@ body > header .inner{
 
 #portfolio3 .font .ex p:first-of-type{
     font-family: 'RIDIBatang';
+    font-size: 50px;
 }
 
-#portfolio1 .font .ex p:last-of-type{
-    font-size: 28px;
+#portfolio3 .font .ex p:last-of-type{
+    font-size: 20px;
 }
 
 .list5_6{
@@ -1829,6 +1830,13 @@ body > header .inner{
     height: 150px;
     top: 0;
     left: 0;
+}
+
+.kakao .hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
 }
 
 .slack{
