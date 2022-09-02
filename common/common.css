@@ -907,6 +907,10 @@ body > header .inner{
     background-color: #e4ceb7;
 }
 
+#portfolio4{
+    background-color: lightpink;
+}
+
 
 .portfolio .inner{
     position: relative;
@@ -1037,6 +1041,10 @@ body > header .inner{
     background-image: url(../images/portfolio_project3_bg.png);
 }
 
+#portfolio4::before{
+    background-image: url(../images/portfolio_project4_bg.png);
+}
+
 .portfolio .inner{
     position: relative;
     z-index: 50;
@@ -1136,6 +1144,10 @@ body > header .inner{
 
 #portfolio3 .proposal::before{
     background-color: #e4ceb7;
+}
+
+#portfolio4 .proposal::before{
+    background-color: lightpink;
 }
 
 .proposal > div{
