@@ -34,6 +34,8 @@ $(".star").each(function(){
     evt.currentTarget.className += " on";
   }
 
+  // header gnb
+
 $(function(){
   $('.ham').click(function(){
     $('.ham').toggleClass('on')
@@ -46,7 +48,6 @@ $(function(){
     $('.ham, .gnb, .mb_title').removeClass('mb')
   })
 
-  // header gnb
   $('.aboutme_nav, .contact_nav').click(function(){
       $('.gnb, .ham').addClass('detail')
   })
