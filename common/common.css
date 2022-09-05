@@ -1937,3 +1937,23 @@ body > header .inner{
        left: 30%;
     }
 }
+
+.top_btn{
+    position: fixed;
+    z-index: 500000;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: white;
+    display: none;
+    text-align: center;
+    padding: 0.5rem 0;
+    color: #280841;
+}
+
+.top_btn.detail{
+    background-color: #803790;
+    color: white;
+}

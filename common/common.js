@@ -46,10 +46,12 @@ $(function(){
   $('.gnb > li').click(function(){
     $('.ham, .gnb, .mb_title').removeClass('on')
     $('.ham, .gnb, .mb_title').removeClass('mb')
+    $('.top_btn').show()
   })
 
   $('.aboutme_nav, .contact_nav').click(function(){
       $('.gnb, .ham').addClass('detail')
+      $('.top_btn').addClass('detail')
   })
 
   $('.portfolio_nav').click(function(){
@@ -58,6 +60,7 @@ $(function(){
 
   $('.home_nav, .portfolio_nav').click(function(){
     $('.gnb, .ham').removeClass('detail')
+    $('.top_btn').removeClass('detail')
   })
 
   $('.gnb > li').click(function(){
@@ -68,6 +71,7 @@ $(function(){
 
   $('.home_nav').click(function(){
     $('#main').addClass('on')
+    $('.top_btn').hide()
   })
 
   $('.aboutme_nav').click(function(){
@@ -107,6 +111,7 @@ $(function(){
 
   $('.contact_nav').click(function(){
     $('#contact').addClass('on')
+    $('.top_btn').hide()
   })
 
   // portfolio nav
@@ -116,5 +121,13 @@ $(function(){
     let idx = pf_gnb.index(this)
     $('.portfolio').removeClass('on')
     $('.portfolio').eq(idx).addClass('on')
+  })
+
+  // top_btn
+  $('.top_btn').click(function(){
+    $('.wrap').animate({
+      scrollTop : 0
+    }, 400);
+    return false;
   })
 })
